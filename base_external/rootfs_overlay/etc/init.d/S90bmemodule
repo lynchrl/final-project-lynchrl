@@ -1,0 +1,16 @@
+#!/bin/sh
+
+case "$1" in
+    start)
+        echo "Loading bme280 module"
+        modprobe bme280
+        ;;
+    stop)
+        echo "Removing bme280 module"
+        modprobe -r bme280
+        ;;
+    *)
+        echo "Usage: $0 (start|stop)"
+        exit 1
+        ;;
+esac
