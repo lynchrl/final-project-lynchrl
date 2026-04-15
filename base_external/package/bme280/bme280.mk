@@ -1,4 +1,4 @@
-BME280_VERSION = 'a0962994f10ceb6492f693f27fe8241682b280f2'
+BME280_VERSION = 'f5704d4884e5de115bcc748d4e08052caef6c90a'
 # Note: Be sure to reference the *ssh* repository URL here (not https) to work properly
 # with ssh keys and the automated build/test system.
 # Your site should start with git@github.com:
