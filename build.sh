@@ -10,6 +10,7 @@ git submodule sync
 git submodule update
 
 export BME280_OVERRIDE_SRCDIR=/home/lynchrl/src/MSCS/msee-embedded-linux/final-project-lynchrl-src
+export SERVICE_OVERRIDE_SRCDIR=/home/lynchrl/src/MSCS/msee-embedded-linux/final-project-lynchrl-src
 
 set -e 
 cd `dirname $0`
@@ -32,7 +33,10 @@ else
 	echo "To force update, delete .config or make changes using make menuconfig and build again."
 	# If first arg is "local", then set BME280_OVERRIDE_SRCDIR.
 	if [ "$1" = "local" ]; then
-		make -C buildroot BR2_EXTERNAL=${EXTERNAL_REL_BUILDROOT} BME280_OVERRIDE_SRCDIR=${BME280_OVERRIDE_SRCDIR}
+		echo "USING LOCAL SOURCE FOR BME280 MODULE AND SERVICE"
+		make -C buildroot BR2_EXTERNAL=${EXTERNAL_REL_BUILDROOT} \
+			BME280_OVERRIDE_SRCDIR=${BME280_OVERRIDE_SRCDIR} \
+			SERVICE_OVERRIDE_SRCDIR=${SERVICE_OVERRIDE_SRCDIR}
 	else
 		make -C buildroot BR2_EXTERNAL=${EXTERNAL_REL_BUILDROOT}
 	fi

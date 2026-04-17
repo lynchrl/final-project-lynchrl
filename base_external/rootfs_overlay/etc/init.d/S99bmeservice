@@ -1,0 +1,20 @@
+#!/bin/sh
+
+PROG=/usr/bin/service
+
+# TODO(lynchrl/final-project-lynchrl#11): Pass path to BME device with device_path flag.
+
+case "$1" in
+    start)
+        echo "Starting BME280 service"
+        start-stop-daemon -S -b ${PROG} -- -read_interval 1m
+        ;;
+    stop)
+        echo "Stopping BME280 service"
+        start-stop-daemon -K -x ${PROG}
+        ;;
+    *)
+        echo "Usage: $0 (start|stop)"
+        exit 1
+        ;;
+esac
