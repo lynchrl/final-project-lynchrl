@@ -1,0 +1,4 @@
+config BR2_PACKAGE_SERVICE
+	bool "service"
+	help
+	  Writer service for BME280 data collection.
