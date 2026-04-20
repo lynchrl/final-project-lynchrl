@@ -1,4 +1,4 @@
-SERVICE_VERSION = '023cf94e048d5ec7ea7eea33e28d3cbe846b318d'
+SERVICE_VERSION = '3e95659002956535e5dc8bfd0fb60450238642b1'
 SERVICE_SITE = $(call github,lynchrl,final-project-lynchrl-src,$(SERVICE_VERSION))
 
 SERVICE_DEPENDENCIES = sqlite
