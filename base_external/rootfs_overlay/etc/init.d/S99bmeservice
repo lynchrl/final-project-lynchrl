@@ -7,7 +7,7 @@ PROG=/usr/bin/service
 case "$1" in
     start)
         echo "Starting BME280 service"
-        start-stop-daemon -S -b ${PROG} -- -read_interval 1m
+        start-stop-daemon -S -b ${PROG} -- -read_interval 1m -device_path /dev/bme280
         ;;
     stop)
         echo "Stopping BME280 service"
